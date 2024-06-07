@@ -1,16 +1,11 @@
 import "@typespec/http";
 
-import "../model/user.tsp";
-import "../model/response.tsp";
-import "../model/headers.tsp";
 import "../model/main.tsp";
 
 using Http;
-using User;
-using CustomResponse;
 
 namespace SofteverHR.Services;
-@tag("UserService")
+@tag("Users")
 @route("/api/Users")
 interface UsersService {
     @get
@@ -21,9 +16,9 @@ interface UsersService {
     getUsersList(
         @query searchTerm?: string,
         @query department?: Department,
-        ...CustomQuery.SortBy<GetUserListSortBy>,
-        ...CustomQuery.Paging,
-    ): (Success<UserListDTO[]> & Headers.Paging) | Error;
+        ...SortBy<GetUserListSortBy>,
+        ...Paging<void>,
+    ): (Success<UserListDTO[]> & HeadersPaging) | Error;
 
     @get
     getUsersId(@path id: string): Success<UserDTO> | Error;

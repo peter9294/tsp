@@ -2,9 +2,7 @@ import "@typespec/http";
 
 using Http;
 
-namespace Headers;
-
-model Paging {
+model HeadersPaging {
     @doc("Page No")
     @header("X-Paging-PageNo")
     xPagingPageNo: integer;

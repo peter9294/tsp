@@ -1,10 +1,8 @@
 import "@typespec/http";
 
-import "../model/auth.tsp";
-import "../model/response.tsp";
+import "../model/main.tsp";
 
 using Http;
-using CustomResponse;
 
 namespace SofteverHR.Services;
 @route("/api")
@@ -16,8 +14,8 @@ interface TokenService {
         @header
         contentType: "application/json" | "text/json" | "application/*+json",
 
-        @body param: Auth.LoginParam,
-    ): Success<Auth.JsonWebToken>;
+        @body param: LoginParam,
+    ): Success<JsonWebToken>;
 
     @route("/Token/logout")
     @post

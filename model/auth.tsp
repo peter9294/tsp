@@ -1,5 +1,3 @@
-namespace Auth;
-
 model LoginParam {
     grant_type: string = "password";
     username: string = "admin@admin";

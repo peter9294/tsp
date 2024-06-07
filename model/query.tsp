@@ -2,14 +2,14 @@ import "@typespec/http";
 
 using Http;
 
-namespace CustomQuery;
-
-model SortBy<Item extends Reflection.Enum> {
-    @query sortBy?: Item;
+model SortBy<SortByEnum extends Reflection.Enum> {
+    @query sortBy?: SortByEnum;
     @query ascending?: boolean;
 }
 
-model Paging {
+// paging is in template form to avoid being generate as a type
+// when using just put 'void' in the <>
+model Paging<_> {
     @query page?: int32;
     @query pageSize?: int32;
 }

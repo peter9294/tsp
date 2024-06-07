@@ -1,5 +1,3 @@
-namespace User;
-
 enum Role {
     SUPER_ADMIN: "SuperAdmin",
     HEAD_OF_TEAM: "HeadOfTeam",
@@ -47,7 +45,8 @@ enum GetUserListSortBy {
 
 alias PrivateProperties = "citizenId" | "address" | "birthDate";
 
-model UserDTO extends Base {
+model UserDTO {
+    ...Base;
     nameTitleTH?: string | null;
     firstNameTH?: string | null;
     lastNameTH?: string | null;
@@ -64,7 +63,7 @@ model UserDTO extends Base {
     ...WorkDetailDTO;
 }
 
-model WorkDetailDTO extends Base {
+model WorkDetailDTO {
     employeeId?: string | null;
     department?: Department;
     position?: string | null;
