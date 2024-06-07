@@ -1,12 +1,14 @@
 import "@typespec/http";
 import "@typespec/rest";
 import "@typespec/openapi3";
-import "./index.tsp";
+
+import "./model";
+import "./services";
 
 using Http;
-using Rest;
-using OpenAPI;
 
-// @service({
-//     title: "TestTypespec",
-// })
+@service({
+    title: "Softever HR",
+})
+@useAuth(BearerAuth)
+namespace SofteverHR;
