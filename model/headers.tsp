@@ -12,7 +12,7 @@ model HeadersPaging {
     xPagingPageSize: integer;
 
     @doc("Paging Page Count")
-    @header("X-Pagign-PageCount")
+    @header("X-Paging-PageCount")
     xPagingPageCount: integer;
 
     @doc("Total Record Count")
