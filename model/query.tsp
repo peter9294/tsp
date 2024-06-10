@@ -7,8 +7,10 @@ model SortBy<SortByEnum extends Reflection.Enum> {
     @query ascending?: boolean;
 }
 
-// paging is in template form to avoid being generate as a type
-// when using just put 'void' in the <>
+/**
+ * paging is in template form to avoid being generate as a type,
+ * when using it just put 'void' in the <>
+ */
 model Paging<_> {
     @query page?: int32;
     @query pageSize?: int32;
