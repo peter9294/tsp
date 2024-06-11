@@ -36,12 +36,12 @@ model LeaveListDTO {
     leaveDay?: LeaveDayType;
     remark?: string | null;
     requestStatus?: RequestStatus;
-    leaveLeft?: LeaveAvaliabilityCardDTO[] | null;
+    leaveLeft?: LeaveAvailabilityCardDTO[] | null;
     attachments?: FileDTO[] | null;
     ...BaseTablePermission;
 }
 
-model LeaveAvaliabilityCardDTO {
+model LeaveAvailabilityCardDTO {
     leaveType?: LeaveType;
     avaliableDay?: int32 | null;
 }
