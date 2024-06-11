@@ -43,5 +43,5 @@ model LeaveListDTO {
 
 model LeaveAvailabilityCardDTO {
     leaveType?: LeaveType;
-    avaliableDay?: int32 | null;
+    availableDay?: int32 | null;
 }
