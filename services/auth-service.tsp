@@ -7,10 +7,10 @@ using Http;
 namespace SofteverHR.Services;
 @route("/api/Token")
 @tag("Token")
-interface TokenService {
+interface Token {
     @route("/Login")
     @post
-    login(
+    Login(
         @header
         contentType: "application/json" | "text/json" | "application/*+json",
 
@@ -19,7 +19,7 @@ interface TokenService {
 
     @route("/Logout")
     @post
-    logout(
+    Logout(
         @header
         contentType: "application/json" | "text/json" | "application/*+json",
 

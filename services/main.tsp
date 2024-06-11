@@ -1,6 +1,6 @@
-import "./authservice.tsp";
-import "./fileservice.tsp";
+import "./auth-service.tsp";
+import "./file-service.tsp";
 
 //
-import "./userservice.tsp";
-import "./leaveService.tsp";
+import "./user-service.tsp";
+import "./leave-service.tsp";
