@@ -12,7 +12,7 @@ interface UsersService {
     getUsers(): Success<UserDTO[]> | Error;
 
     @get
-    @route("/list")
+    @route("/List")
     getUsersList(
         @query searchTerm?: string,
         @query department?: Department,
@@ -24,7 +24,7 @@ interface UsersService {
     getUsersId(@path id: string): Success<UserDTO> | Error;
 
     @get
-    @route("/info")
+    @route("/Info")
     getUserInfo(@path id: string): Success<UserInfoDTO> | Error;
 
     @post
