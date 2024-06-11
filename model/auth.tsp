@@ -5,6 +5,10 @@ model LoginParam {
     refresh_token?: string | null;
 }
 
+model LogoutParam {
+    refresh_token?: string;
+}
+
 model JsonWebToken {
     token?: string | null;
     expires: int64 = 0;

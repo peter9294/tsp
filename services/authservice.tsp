@@ -5,10 +5,10 @@ import "../model/main.tsp";
 using Http;
 
 namespace SofteverHR.Services;
-@route("/api")
+@route("/api/Token")
 @tag("Token")
 interface TokenService {
-    @route("/Token/login")
+    @route("/Login")
     @post
     login(
         @header
@@ -17,14 +17,12 @@ interface TokenService {
         @body param: LoginParam,
     ): Success<JsonWebToken>;
 
-    @route("/Token/logout")
+    @route("/Logout")
     @post
     logout(
         @header
         contentType: "application/json" | "text/json" | "application/*+json",
 
-        @body param: {
-            refresh_token: string;
-        },
+        @body param: LogoutParam,
     ): BaseResponse.Success | BaseResponse.Unauthorized | BaseResponse.Forbidden;
 }
