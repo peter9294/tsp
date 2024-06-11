@@ -10,5 +10,6 @@ using Http;
 @service({
     title: "Softever HR",
 })
-@useAuth(BearerAuth)
+@server("https://dev-softeverhr.softever.co.th/develop/backend", "")
+@useAuth(Bearer)
 namespace SofteverHR;

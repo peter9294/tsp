@@ -18,3 +18,10 @@ model JsonWebToken {
     display_name?: string | null;
     mustChangePassword: boolean;
 }
+
+model Bearer {
+    type: Http.AuthType.apiKey;
+    description: "JWT Authorization header using the Bearer scheme. Example: Authorization: Bearer {token}";
+    name: "Authorization";
+    in: Http.ApiKeyLocation.header;
+}
