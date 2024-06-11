@@ -6,7 +6,7 @@ model LoginParam {
 }
 
 model LogoutParam {
-    refresh_token?: string;
+    refresh_token?: string | null;
 }
 
 model JsonWebToken {
