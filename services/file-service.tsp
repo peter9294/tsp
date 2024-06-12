@@ -7,11 +7,11 @@ using Http;
 namespace SofteverHR.Services;
 @tag("Files")
 @route("/api/Files")
-interface FilesService {
+interface Files {
     @post
     @route("/Upload")
     @summary("อัปโหลดไฟล์")
-    upload(
+    Upload(
         @header contentType: "multipart/form-data",
         @body body?: {
             @encode("binary")
@@ -22,7 +22,7 @@ interface FilesService {
     @post
     @route("/MultipleUpload")
     @summary("อัปโหลดทีละหลายไฟล์")
-    multipleUpload(
+    MultipleUpload(
         @header contentType: "multipart/form-data",
         @body body?: {
             @encode("binary")

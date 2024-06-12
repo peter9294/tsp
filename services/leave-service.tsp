@@ -7,22 +7,22 @@ using Http;
 namespace SofteverHR.Services;
 @tag("Leave")
 @route("/api/Leave")
-interface LeaveService {
+interface Leave {
     @get
     @route("/Card")
     getLeaveCard(): Success<LeaveAvailabilityCardDTO[]> | Error;
 
     @get
     @route("/List")
-    getLeaveList(
+    GetLeaveList(
         ...SortBy<GetLeaveListSortBy>,
         ...Paging<void>,
     ): (Success<LeaveListDTO[]> & HeadersPaging) | Error;
 
     @post
-    createLeave(@body param: LeaveListDTO): void | Error;
+    CreateLeave(@body param: LeaveListDTO): void | Error;
 
     @delete
     @route("/list")
-    deleteLeaveList(@path id: string): void | Error;
+    DeleteLeaveList(@path id: string): void | Error;
 }

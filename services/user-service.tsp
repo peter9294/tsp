@@ -7,13 +7,13 @@ using Http;
 namespace SofteverHR.Services;
 @tag("Users")
 @route("/api/Users")
-interface UsersService {
+interface Users {
     @get
-    getUsers(): Success<UserDTO[]> | Error;
+    GetUsers(): Success<UserDTO[]> | Error;
 
     @get
     @route("/List")
-    getUsersList(
+    GetUsersList(
         @query searchTerm?: string,
         @query department?: Department,
         ...SortBy<GetUserListSortBy>,
@@ -21,15 +21,15 @@ interface UsersService {
     ): (Success<UserListDTO[]> & HeadersPaging) | Error;
 
     @get
-    getUsersId(@path id: string): Success<UserDTO> | Error;
+    GetUsersId(@path id: string): Success<UserDTO> | Error;
 
     @get
     @route("/Info")
-    getUserInfo(@path id: string): Success<UserInfoDTO> | Error;
+    GetUserInfo(@path id: string): Success<UserInfoDTO> | Error;
 
     @post
-    createUser(@body param: UserDTO): void | Error;
+    CreateUser(@body param: UserDTO): void | Error;
 
     @delete
-    deleteUsersId(@path id: string): void | Error;
+    DeleteUsersId(@path id: string): void | Error;
 }
