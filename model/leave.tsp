@@ -1,16 +1,45 @@
 enum LeaveType {
+    @doc("ลาพักร้อน")
     ANNUAL: "Annual",
-    BIRTH_MONTH: "BirthMonth",
-    SPECIAL: "Special",
-    CARRY_OVER: "CarryOver",
+
+    @doc("ลาป่วย")
     SICK: "Sick",
+
+    @doc("ลากิจ")
     PERSONAL: "Personal",
+
+    @doc("ลาคลอด")
     MATERNITY: "Maternity",
+
+    @doc("ลาช่วยภรรยาคลอดบุตร")
+    PATERNITY: "Paternity",
+}
+
+enum AnnualLeaveSubType {
+    @doc("ทั่วไป")
+    NORMAL: "Normal",
+
+    @doc("ลาเดือนเกิด")
+    BIRTH_MONTH: "BirthMonth",
+
+    @doc("ลาพิเศษ")
+    SPECIAL: "Special",
+
+    @doc("Carry over")
+    CARRY_OVER: "CarryOver",
+}
+
+enum MaternityLeaveSubType {
+    @doc("ลาตรวจครรถ์")
+    PREGNANCY_TEST: "PregnancyTest",
+
+    @doc("ลาคลอด")
+    ANTENATAL_CARE: "AntenatalCare",
 }
 
 enum LeaveSubType {
-    FOO: "Foo",
-    BAR: "Bar",
+    ...AnnualLeaveSubType,
+    ...MaternityLeaveSubType,
 }
 
 enum GetLeaveListSortBy {
@@ -43,5 +72,6 @@ model LeaveListDTO {
 
 model LeaveAvailabilityCardDTO {
     leaveType?: LeaveType;
+    leaveSubType?: LeaveSubType;
     availableDay?: int32 | null;
 }

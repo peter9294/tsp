@@ -10,7 +10,7 @@ namespace SofteverHR.Services;
 interface Leave {
     @get
     @route("/Card")
-    getLeaveCard(): Success<LeaveAvailabilityCardDTO[]> | Error;
+    GetLeaveCard(): Success<LeaveAvailabilityCardDTO[]> | Error;
 
     @get
     @route("/List")
@@ -23,6 +23,6 @@ interface Leave {
     CreateLeave(@body param: LeaveListDTO): void | Error;
 
     @delete
-    @route("/list")
+    @route("/List")
     DeleteLeaveList(@path id: string): void | Error;
 }
