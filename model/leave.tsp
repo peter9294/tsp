@@ -56,7 +56,40 @@ enum LeaveDayType {
     FULL_DAY: "FullDay",
 }
 
-model LeaveListDTO {
+enum GetLeaveHistorySortBy {
+    NAME: "Name",
+    LEAVE_TYPE: "LeaveType",
+    START_END_DATE: "StartEndDate",
+    LEAVE_INTERVAL: "LeaveInterval",
+    REMARK: "Remark",
+    LEAVE_LEFT: "LeaveLeft",
+    REQUEST_STATUS: "RequestStatus",
+}
+
+enum GetLeaveRequestSortBy {
+    NAME: "Name",
+    LEAVE_TYPE: "LeaveType",
+    START_END_DATE: "StartEndDate",
+    LEAVE_INTERVAL: "LeaveInterval",
+    REMARK: "Remark",
+    LEAVE_LEFT: "LeaveLeft",
+    REQUEST_STATUS: "RequestStatus",
+}
+
+enum GetLeaveManagementListSortBy {
+    NAME_TITLE: "NameTitle",
+    FIRST_NAME: "FirstName",
+    LAST_NAME: "LastName",
+    DEPARTMENT: "Department",
+    ROLE: "Role",
+    START_WORK_DATE: "StartWorkDate",
+    WORK_INTERVAL: "WorkInterval",
+    TOTAL_LEAVE_AVAILABLE: "TotalLeaveAvailable",
+    TOTAL_LEAVE_LEFT: "TotalLeaveLeft",
+    // TODO: complete this
+}
+
+model Leave {
     leaveType?: LeaveType;
     leaveSubType?: LeaveSubType;
     startDate?: utcDateTime | null;
@@ -65,13 +98,41 @@ model LeaveListDTO {
     leaveDay?: LeaveDayType;
     remark?: string | null;
     requestStatus?: RequestStatus;
-    leaveLeft?: LeaveAvailabilityCardDTO[] | null;
+    leaveLeft?: LeaveLeftDTO[] | null;
     attachments?: FileDTO[] | null;
+}
+
+model LeaveListDTO {
+    ...Base;
+    ...Leave;
     ...BaseTablePermission;
 }
 
-model LeaveAvailabilityCardDTO {
+model LeaveLeftDTO {
     leaveType?: LeaveType;
     leaveSubType?: LeaveSubType;
     availableDay?: int32 | null;
+}
+
+model LeaveHistoryDTO {
+    ...Base;
+    user: UserInfoDTO;
+    ...Leave;
+}
+
+model LeaveRequestDTO {
+    ...LeaveHistoryDTO;
+    ...BaseTablePermission;
+}
+
+model LeaveManagementDTO {
+    ...Base;
+    nameTitle?: UserDTO.nameTitleTH;
+    firstName?: UserDTO.firstNameTH;
+    lastName?: UserDTO.lastNameTH;
+    email?: UserDTO.email;
+    ...WorkDetailDTO;
+    totalLeave?: int32 | null;
+    leaveLeft?: LeaveLeftDTO[];
+    ...BaseTablePermission;
 }

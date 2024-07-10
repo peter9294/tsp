@@ -21,15 +21,15 @@ interface Users {
     ): (Success<UserListDTO[]> & HeadersPaging) | Error;
 
     @get
-    GetUsersId(@path id: string): Success<UserDTO> | Error;
+    GetUsersId(@format("uuid") @path id: string): Success<UserDTO> | Error;
 
     @get
     @route("/Info")
-    GetUserInfo(@path id: string): Success<UserInfoDTO> | Error;
+    GetUserInfo(@format("uuid") @path id: string): Success<UserInfoDTO> | Error;
 
     @post
     CreateUser(@body param: UserDTO): void | Error;
 
     @delete
-    DeleteUsersId(@path id: string): void | Error;
+    DeleteUsersId(@format("uuid") @path id: string): void | Error;
 }
