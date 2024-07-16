@@ -14,3 +14,5 @@ import "./permission.tsp";
 import "./file.tsp";
 import "./home.tsp";
 import "./softever-fit.tsp";
+import "./skill-up.tsp";
+import "./lifestyle-wallet.tsp";

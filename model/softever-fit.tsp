@@ -40,9 +40,6 @@ model SofteverFitWalletSeriesDTO {
     @doc("ชื่อหน่วยแกน Y")
     name?: string | null;
 
-    @doc("type: bar")
-    type?: string | null;
-
     @doc("ค่าแกน Y")
     data?: int32[] | null;
 
@@ -66,7 +63,6 @@ model SofteverFit {
     step?: int32 | null;
     calories?: int32 | null;
     performance?: Performance;
-    date?: utcDateTime | null;
     attachment?: FileDTO | null;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
@@ -84,6 +80,7 @@ model SofteverFitRequestDTO {
         id?: UserDTO.id;
         firstNameTH?: UserDTO.firstNameTH;
         lastNameTH?: UserDTO.lastNameTH;
+        position?: UserDTO.position;
     } | null;
     summary?: SofteverFitSummaryDTO;
     ...SofteverFit;

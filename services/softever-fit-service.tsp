@@ -21,6 +21,22 @@ interface SofteverFit {
     @post
     PostSofteverFit(@body body: SofteverFitListDTO): void | Error;
 
+    @put
+    PutSofteverFit(
+        @format("uuid")
+        @path
+        id: string,
+
+        @body body: SofteverFitListDTO,
+    ): void | Error;
+
+    @delete
+    DeleteSofteverFit(
+        @format("uuid")
+        @path
+        id: string,
+    ): void | Error;
+
     @get
     @route("/Summary")
     GetSofteverFitSummary(): Success<SofteverFitSummaryDTO> | Error;
@@ -55,7 +71,9 @@ interface SofteverFit {
         @format("uuid")
         @path
         id: string,
-    ): Success<SofteverFitRequestDTO[]> | Error;
+
+        @body body: SofteverFitRequestDTO,
+    ): void | Error;
 
     @post
     @route("/Request/MultipleApprove")

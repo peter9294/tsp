@@ -10,12 +10,6 @@ namespace SofteverHR.Services;
 @route("/api/Home")
 interface Home {
     @get
-    @route("/LifestyleWalletSummary")
-    GetLifestyleWalletSummary(
-        @query year?: string,
-    ): Success<LifestyleWalletSummaryDTO> | Error;
-
-    @get
     @route("/BirthMonthRemaining")
     GetBirthMonthRemaining(): Success<BirthMonthRemainingDTO> | Error;
 }

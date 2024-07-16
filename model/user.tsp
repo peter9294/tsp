@@ -26,7 +26,8 @@ enum Sex {
 
 // TODO: add gender
 enum Gender {
-    STRAIGHT_MALE: "Straight Male",
+    STRAIGHT_MALE: "StraightMale",
+    STRAIGHT_FEMALE: "StraightFeMale",
 }
 
 enum GetUserListSortBy {
