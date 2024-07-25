@@ -85,6 +85,7 @@ model LifestyleWalletRequestDTO {
     summary?: LifestyleWalletSummaryDTO;
     ...LifestyleWallet;
     ...BaseTablePermission;
+    ...BaseApprovePermission;
 }
 
 model LifestyleWalletRequestHistoryDTO {

@@ -17,6 +17,8 @@ enum Department {
     FRONTEND: "Frontend",
     QA: "QA",
     UXUI: "UX/UI",
+    TESTER: "Tester",
+    ADMIN: "Admin",
 }
 
 enum Sex {

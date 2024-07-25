@@ -82,11 +82,39 @@ enum GetLeaveManagementListSortBy {
     LAST_NAME: "LastName",
     DEPARTMENT: "Department",
     ROLE: "Role",
+
+    @doc("วันที่เริ่มทำงาน")
     START_WORK_DATE: "StartWorkDate",
+
+    @doc("ระยะเวลาการทำงาน")
     WORK_INTERVAL: "WorkInterval",
+
+    @doc("จำนวนวันลาทั้งหมด")
     TOTAL_LEAVE_AVAILABLE: "TotalLeaveAvailable",
+
+    @doc("จำนวนวันลาที่เหลือ")
     TOTAL_LEAVE_LEFT: "TotalLeaveLeft",
-    // TODO: complete this
+
+    @doc("จำนวนวันลาพักผ่อนประจำปีที่เหลือ")
+    TOTAL_ANNUAL_LEAVE_LEFT: "TotalAnnualLeaveLeft",
+
+    @doc("จำนวนวันลาพักผ่อนในเดือนเกิดที่เหลือ")
+    TOTAL_BIRTH_MONTH_LEAVE_LEFT: "TotalBirthMonthLeaveLeft",
+
+    @doc("จำนวนวันลาพิเศษที่เหลือ")
+    TOTAL_SPECIAL_LEAVE_LEFT: "TotalSpecialLeaveLeft",
+
+    @doc("จำนวนวันลาป่วยที่เหลือ")
+    TOTAL_SICK_LEAVE_LEFT: "TotalSickLeaveLeft",
+
+    @doc("จำนวนวันลากิจส่วนตัวที่เหลือ")
+    TOTAL_PERSONAL_LEAVE_LEFT: "TotalPersonalLeaveLeft",
+
+    @doc("จำนวนวันลาคลอดที่เหลือ")
+    TOTAL_MATERNITY_LEAVE_LEFT: "TotalMaternityLeaveLeft",
+
+    @doc("จำนวนวันลาไปช่วยภรรยาที่คลอดบุตรที่เหลือ")
+    TOTAL_PATERNITY_LEAVE_LEFT: "TotalPaternityLeaveLeft",
 }
 
 model Leave {
@@ -123,6 +151,7 @@ model LeaveHistoryDTO {
 model LeaveRequestDTO {
     ...LeaveHistoryDTO;
     ...BaseTablePermission;
+    ...BaseApprovePermission;
 }
 
 model LeaveManagementDTO {
@@ -135,4 +164,5 @@ model LeaveManagementDTO {
     totalLeave?: int32 | null;
     leaveLeft?: LeaveLeftDTO[];
     ...BaseTablePermission;
+    ...BaseApprovePermission;
 }

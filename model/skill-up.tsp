@@ -57,6 +57,7 @@ model SkillUpRequestDTO {
     summary?: SkillUpSummaryDTO | null;
     ...SkillUp;
     ...BaseTablePermission;
+    ...BaseApprovePermission;
 }
 
 model SkillUpCourseDTO {

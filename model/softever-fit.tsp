@@ -85,4 +85,5 @@ model SofteverFitRequestDTO {
     summary?: SofteverFitSummaryDTO;
     ...SofteverFit;
     ...BaseTablePermission;
+    ...BaseApprovePermission;
 }
