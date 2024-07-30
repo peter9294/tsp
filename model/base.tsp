@@ -6,6 +6,6 @@ model Base {
 
 model ApproveDTO {
     @format("uuid") id: string | null;
-    requestStatus: RequestStatus.APPROVE | RequestStatus.REJECT;
+    requestStatus: RequestStatus;
     reason?: string | null;
 }

@@ -62,7 +62,7 @@ model LifestyleWallet {
     itemName?: string | null;
     lifestyleWalletType?: LifestyleWalletType;
     spendDate?: utcDateTime | null;
-    attachment?: FileDTO | null;
+    attachment?: FileDTO;
     reward?: int32 | null;
     hasTaxInvoice?: boolean | null;
     requestStatus?: RequestStatus;
@@ -76,12 +76,7 @@ model LifestyleWalletListDTO {
 
 model LifestyleWalletRequestDTO {
     ...Base;
-    user?: {
-        id?: UserDTO.id;
-        firstNameTH?: UserDTO.firstNameTH;
-        lastNameTH?: UserDTO.lastNameTH;
-        position?: UserDTO.position;
-    } | null;
+    user?: UserRequestDTO;
     summary?: LifestyleWalletSummaryDTO;
     ...LifestyleWallet;
     ...BaseTablePermission;

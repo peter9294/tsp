@@ -26,7 +26,7 @@ model SkillUpSummaryDTO {
 }
 
 model SkillUp {
-    course?: SkillUpCourseDTO | null;
+    course?: SkillUpCourseDTO;
     courseTeam?: Department;
 
     @format("url")
@@ -35,7 +35,7 @@ model SkillUp {
     learningStatus?: LearningStatus;
     startDate?: utcDateTime | null;
     endDate?: utcDateTime | null;
-    attachment?: FileDTO | null;
+    attachment?: FileDTO;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
 }
@@ -48,13 +48,8 @@ model SkillUpListDTO {
 
 model SkillUpRequestDTO {
     ...Base;
-    user?: {
-        id?: UserDTO.id;
-        firstNameTH?: UserDTO.firstNameTH;
-        lastNameTH?: UserDTO.lastNameTH;
-        position?: UserDTO.position;
-    } | null;
-    summary?: SkillUpSummaryDTO | null;
+    user?: UserRequestDTO;
+    summary?: SkillUpSummaryDTO;
     ...SkillUp;
     ...BaseTablePermission;
     ...BaseApprovePermission;

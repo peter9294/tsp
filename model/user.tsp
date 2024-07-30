@@ -65,14 +65,12 @@ model UserDTO {
     citizenId?: string | null;
     address?: string | null;
     birthDate?: utcDateTime | null;
-    profilePicture?: FileDTO | null;
+    profilePicture?: FileDTO;
     ...WorkDetailDTO;
 }
 
 model WorkDetailDTO {
     employeeId?: string | null;
-
-    @doc("แผนก")
     department?: Department;
 
     @doc("ตำแหน่ง")
@@ -103,4 +101,11 @@ model UserInfoDTO {
     department?: UserDTO.department;
     position?: UserDTO.position;
     profilePicture?: UserDTO.profilePicture;
+}
+
+model UserRequestDTO {
+    id?: UserDTO.id;
+    firstNameTH?: UserDTO.firstNameTH;
+    lastNameTH?: UserDTO.lastNameTH;
+    position?: UserDTO.position;
 }

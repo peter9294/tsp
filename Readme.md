@@ -33,3 +33,7 @@ backend requires operationId as {tag}_{operationName}. OpenAPI emitter auto gene
         op GetUsersList() ...
     }
 ```
+
+[Caution]
+
+- Using @doc decorator will make object value type enum generate "allOf" instead of normal "$ref"

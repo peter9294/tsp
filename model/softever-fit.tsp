@@ -48,13 +48,13 @@ model SofteverFitWalletSeriesDTO {
 }
 
 model SofteverFitWalletChartDTO {
-    xAxis?: SofteverFitWalletXAxisDTO | null;
-    series?: SofteverFitWalletSeriesDTO | null;
+    xAxis?: SofteverFitWalletXAxisDTO;
+    series?: SofteverFitWalletSeriesDTO;
 }
 
 model SofteverFitPointChartDTO {
-    xAxis?: SofteverFitWalletXAxisDTO | null;
-    series?: SofteverFitWalletSeriesDTO | null;
+    xAxis?: SofteverFitWalletXAxisDTO;
+    series?: SofteverFitWalletSeriesDTO;
 }
 
 model SofteverFit {
@@ -63,7 +63,7 @@ model SofteverFit {
     step?: int32 | null;
     calories?: int32 | null;
     performance?: Performance;
-    attachment?: FileDTO | null;
+    attachment?: FileDTO;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
 }
@@ -76,12 +76,7 @@ model SofteverFitListDTO {
 
 model SofteverFitRequestDTO {
     ...Base;
-    user?: {
-        id?: UserDTO.id;
-        firstNameTH?: UserDTO.firstNameTH;
-        lastNameTH?: UserDTO.lastNameTH;
-        position?: UserDTO.position;
-    } | null;
+    user?: UserRequestDTO;
     summary?: SofteverFitSummaryDTO;
     ...SofteverFit;
     ...BaseTablePermission;
