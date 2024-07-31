@@ -16,8 +16,7 @@ interface Users {
     GetUsersList(
         @query searchTerm?: string,
         @query department?: Department,
-        ...SortBy<GetUserListSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetUserListSortBy>,
     ): TableResponse<UserListDTO[]>;
 
     @get

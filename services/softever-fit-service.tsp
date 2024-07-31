@@ -14,8 +14,7 @@ interface SofteverFit {
     GetSofteverFitList(
         @query month?: string,
         @query performance?: Performance,
-        ...SortBy<GetSofteverFitListSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetSofteverFitListSortBy>,
     ): TableResponse<SofteverFitListDTO[]>;
 
     @post
@@ -57,8 +56,7 @@ interface SofteverFit {
         @query searchTerm?: string,
         @query year?: string,
         @query performance?: Performance,
-        ...SortBy<GetSofteverFitRequestSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetSofteverFitRequestSortBy>,
     ): TableResponse<SofteverFitRequestDTO[]>;
 
     @put

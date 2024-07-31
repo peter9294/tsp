@@ -31,8 +31,7 @@ interface Leave {
         @query year?: string,
         @query searchTerm?: string,
         @query leaveType?: LeaveType,
-        ...SortBy<GetLeaveHistorySortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLeaveHistorySortBy>,
     ): TableResponse<LeaveHistoryDTO[]>;
 
     @get
@@ -41,8 +40,7 @@ interface Leave {
         @query year?: string,
         @query searchTerm?: string,
         @query leaveType?: LeaveType,
-        ...SortBy<GetLeaveRequestSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLeaveRequestSortBy>,
     ): TableResponse<LeaveRequestDTO[]>;
 
     @post
@@ -59,8 +57,7 @@ interface Leave {
         @query year?: string,
         @query searchTerm?: string,
         @query department?: Department,
-        ...SortBy<GetLeaveManagementListSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLeaveManagementListSortBy>,
     ): TableResponse<LeaveManagementDTO[]>;
 
     @get

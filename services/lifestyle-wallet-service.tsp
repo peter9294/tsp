@@ -43,8 +43,7 @@ interface LifestyleWallet {
         @query department?: Department,
         @query searchTerm?: string,
         @query year?: string,
-        ...SortBy<GetLifestyleWalletRequestSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLifestyleWalletRequestSortBy>,
     ): TableResponse<LifestyleWalletRequestDTO[]>;
 
     @put
@@ -75,7 +74,6 @@ interface LifestyleWallet {
         @query department?: Department,
         @query searchTerm?: string,
         @query year?: string,
-        ...SortBy<GetLifestyleWalletRequestSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLifestyleWalletRequestSortBy>,
     ): TableResponse<LifestyleWalletRequestHistoryDTO[]>;
 }

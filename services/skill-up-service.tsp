@@ -14,8 +14,7 @@ interface SkillUp {
     GetSkillUpList(
         @query month?: string,
         @query department?: Department,
-        ...SortBy<GetSkillUpListSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetSkillUpListSortBy>,
     ): TableResponse<SkillUpListDTO[]>;
 
     @post
@@ -39,8 +38,7 @@ interface SkillUp {
         @query searchTerm?: string,
         @query year?: string,
         @query department?: Department,
-        ...SortBy<GetSkillUpRequestSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetSkillUpRequestSortBy>,
     ): TableResponse<SkillUpRequestDTO[]>;
 
     @put
