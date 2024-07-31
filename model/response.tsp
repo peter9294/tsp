@@ -2,10 +2,10 @@ import "@typespec/http";
 
 using Http;
 
-model Success<body extends Reflection.Model> {
-    @header contentType: contentType;
+model Success<Body extends Reflection.Model> {
+    @header contentType: ContentType;
     ...BaseResponse.Success;
-    @body body: body;
+    @body body: Body;
 }
 
 alias Error = BaseResponse.Unauthorized | BaseResponse.Forbidden | BaseResponse.ServerError;
@@ -16,14 +16,14 @@ namespace BaseResponse {
     alias Forbidden = ForbiddenResponse; // 403
     model ServerError {
         @statusCode statusCode: 500;
-        @header contentType: contentType;
+        @header contentType: ContentType;
         @body error: ErrorReponse;
     }
 }
 
-alias NormalResponse<successBody extends Reflection.Model> = Success<successBody> | Error;
+alias NormalResponse<SuccessBody extends Reflection.Model> = Success<SuccessBody> | Error;
 
-alias TableResponse<successBody extends Reflection.Model> = (Success<successBody> &
+alias TableResponse<SuccessBody extends Reflection.Model> = (Success<SuccessBody> &
     HeadersPaging) | Error;
 
 alias VoidResponse = void | Error;

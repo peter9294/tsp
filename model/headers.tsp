@@ -20,4 +20,4 @@ model HeadersPaging {
     xPagingTotalRecordCount: integer;
 }
 
-alias contentType = "text/plain" | "application/json" | "text/json";
+alias ContentType = "text/plain" | "application/json" | "text/json";
