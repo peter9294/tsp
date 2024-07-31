@@ -16,10 +16,10 @@ interface SofteverFit {
         @query performance?: Performance,
         ...SortBy<GetSofteverFitListSortBy>,
         ...Paging<void>,
-    ): Success<SofteverFitListDTO[]> | Error;
+    ): TableResponse<SofteverFitListDTO[]>;
 
     @post
-    PostSofteverFit(@body body: SofteverFitListDTO): void | Error;
+    PostSofteverFit(@body body: SofteverFitListDTO): VoidResponse;
 
     @put
     PutSofteverFit(
@@ -28,32 +28,32 @@ interface SofteverFit {
         id: string,
 
         @body body: SofteverFitListDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @delete
     DeleteSofteverFit(
         @format("uuid")
         @path
         id: string,
-    ): void | Error;
+    ): VoidResponse;
 
     @get
     @route("/Summary")
-    GetSofteverFitSummary(): Success<SofteverFitSummaryDTO> | Error;
+    GetSofteverFitSummary(): NormalResponse<SofteverFitSummaryDTO>;
 
     @get
     @route("/WalletChart")
     GetSofteverFitWalletChart(
         @query year?: string,
         @query PeriodType?: PeriodType,
-    ): Success<SofteverFitWalletChartDTO> | Error;
+    ): NormalResponse<SofteverFitWalletChartDTO>;
 
     @get
     @route("/PointChart")
     GetSofteverFitPointChart(
         @query year?: string,
         @query PeriodType?: PeriodType,
-    ): Success<SofteverFitPointChartDTO> | Error;
+    ): NormalResponse<SofteverFitPointChartDTO>;
 
     @get
     @route("/Request")
@@ -63,7 +63,7 @@ interface SofteverFit {
         @query performance?: Performance,
         ...SortBy<GetSofteverFitRequestSortBy>,
         ...Paging<void>,
-    ): Success<SofteverFitRequestDTO[]> | Error;
+    ): TableResponse<SofteverFitRequestDTO[]>;
 
     @put
     @route("/Request")
@@ -73,17 +73,17 @@ interface SofteverFit {
         id: string,
 
         @body body: SofteverFitRequestDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Request/MultipleApprove")
     PostSofteverFitRequestMultipleApprove(
         @body body: ApproveDTO[],
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Request/MultipleDecline")
     PostSofteverFitRequestMultipleDecline(
         @body body: ApproveDTO[],
-    ): void | Error;
+    ): VoidResponse;
 }

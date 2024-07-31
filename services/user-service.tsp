@@ -18,18 +18,18 @@ interface Users {
         @query department?: Department,
         ...SortBy<GetUserListSortBy>,
         ...Paging<void>,
-    ): (Success<UserListDTO[]> & HeadersPaging) | Error;
+    ): TableResponse<UserListDTO[]>;
 
     @get
-    GetUsersId(@format("uuid") @path id: string): Success<UserDTO> | Error;
+    GetUsersId(@format("uuid") @path id: string): NormalResponse<UserDTO>;
 
     @get
     @route("/Info")
-    GetUserInfo(@format("uuid") @path id: string): Success<UserInfoDTO> | Error;
+    GetUserInfo(@format("uuid") @path id: string): NormalResponse<UserInfoDTO>;
 
     @post
-    CreateUser(@body param: UserDTO): void | Error;
+    CreateUser(@body param: UserDTO): VoidResponse;
 
     @delete
-    DeleteUsersId(@format("uuid") @path id: string): void | Error;
+    DeleteUsersId(@format("uuid") @path id: string): VoidResponse;
 }

@@ -16,10 +16,10 @@ interface SkillUp {
         @query department?: Department,
         ...SortBy<GetSkillUpListSortBy>,
         ...Paging<void>,
-    ): Success<SkillUpListDTO[]> | Error;
+    ): TableResponse<SkillUpListDTO[]>;
 
     @post
-    PostSkillUp(@body body: SkillUpListDTO): void | Error;
+    PostSkillUp(@body body: SkillUpListDTO): VoidResponse;
 
     @put
     PutSkillUp(
@@ -28,14 +28,14 @@ interface SkillUp {
         id: string,
 
         @body body: SkillUpListDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @delete
     DeleteSkillUp(
         @format("uuid")
         @path
         id: string,
-    ): void | Error;
+    ): VoidResponse;
 
     @get
     @route("/Request")
@@ -45,7 +45,7 @@ interface SkillUp {
         @query department?: Department,
         ...SortBy<GetSkillUpRequestSortBy>,
         ...Paging<void>,
-    ): Success<SkillUpRequestDTO[]> | Error;
+    ): TableResponse<SkillUpRequestDTO[]>;
 
     @put
     @route("/Request")
@@ -55,19 +55,19 @@ interface SkillUp {
         id: string,
 
         @body body: SkillUpRequestDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Request/MultipleApprove")
-    PostSkillUpRequestMultipleApprove(@body body: ApproveDTO[]): void | Error;
+    PostSkillUpRequestMultipleApprove(@body body: ApproveDTO[]): VoidResponse;
 
     @post
     @route("/Request/MultipleDecline")
-    PostSkillUpRequestMultipleDecline(@body body: ApproveDTO[]): void | Error;
+    PostSkillUpRequestMultipleDecline(@body body: ApproveDTO[]): VoidResponse;
 
     @get
     @route("/CourseDropdown")
     GetSkillUpCourseDropdown(
         @query department?: Department,
-    ): Success<SkillUpCourseDTO[]> | Error;
+    ): NormalResponse<SkillUpCourseDTO[]>;
 }

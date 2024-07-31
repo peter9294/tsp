@@ -10,21 +10,21 @@ namespace SofteverHR.Services;
 interface Leave {
     @get
     @route("/Left")
-    GetLeaveLeft(): Success<LeaveLeftDTO[]> | Error;
+    GetLeaveLeft(): NormalResponse<LeaveLeftDTO[]>;
 
     @get
     @route("/List")
     GetLeaveList(
         ...SortBy<GetLeaveListSortBy>,
         ...Paging<void>,
-    ): (Success<LeaveListDTO[]> & HeadersPaging) | Error;
+    ): TableResponse<LeaveListDTO[]>;
 
     @post
-    CreateLeave(@body param: LeaveListDTO): void | Error;
+    CreateLeave(@body param: LeaveListDTO): VoidResponse;
 
     @delete
     @route("/List")
-    DeleteLeaveList(@format("uuid") @path id: string): void | Error;
+    DeleteLeaveList(@format("uuid") @path id: string): VoidResponse;
 
     @get
     @route("/History")
@@ -34,7 +34,7 @@ interface Leave {
         @query leaveType?: LeaveType,
         ...SortBy<GetLeaveHistorySortBy>,
         ...Paging<void>,
-    ): (Success<LeaveHistoryDTO[]> & HeadersPaging) | Error;
+    ): TableResponse<LeaveHistoryDTO[]>;
 
     @get
     @route("/Request")
@@ -44,15 +44,15 @@ interface Leave {
         @query leaveType?: LeaveType,
         ...SortBy<GetLeaveRequestSortBy>,
         ...Paging<void>,
-    ): (Success<LeaveRequestDTO[]> & HeadersPaging) | Error;
+    ): TableResponse<LeaveRequestDTO[]>;
 
     @post
     @route("/Request/MultipleApprove")
-    PostLeaveRequestMultipleApprove(@body body: ApproveDTO[]): void | Error;
+    PostLeaveRequestMultipleApprove(@body body: ApproveDTO[]): VoidResponse;
 
     @post
     @route("/Request/MultipleDecline")
-    PostLeaveRequestMultipleDecline(@body body: ApproveDTO[]): void | Error;
+    PostLeaveRequestMultipleDecline(@body body: ApproveDTO[]): VoidResponse;
 
     @get
     @route("/Management/List")
@@ -62,21 +62,21 @@ interface Leave {
         @query department?: Department,
         ...SortBy<GetLeaveManagementListSortBy>,
         ...Paging<void>,
-    ): (Success<LeaveManagementDTO[]> & HeadersPaging) | Error;
+    ): TableResponse<LeaveManagementDTO[]>;
 
     @get
     @route("/Management")
     GetLeaveManagement(
         @format("uuid") @path id: string,
         @query year?: string,
-    ): Success<LeaveManagementDTO> | Error;
+    ): NormalResponse<LeaveManagementDTO>;
 
     @put
     @route("/Management")
     PutLeaveManagement(
         @format("uuid") @path id: string,
         @body body: LeaveManagementDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Management/MultipleDelete")
@@ -84,5 +84,5 @@ interface Leave {
         @body body: {
             @format("uuid") id: string;
         }[],
-    ): void | Error;
+    ): VoidResponse;
 }

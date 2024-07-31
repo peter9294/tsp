@@ -14,10 +14,10 @@ interface LifestyleWallet {
     GetLifestyleWalletList(
         ...SortBy<GetLifestyleWalletListSortBy>,
         ...Paging<void>,
-    ): Success<LifestyleWalletListDTO[]> | Error;
+    ): TableResponse<LifestyleWalletListDTO[]>;
 
     @post
-    PostLifestyleWallet(@body body: LifestyleWalletListDTO): void | Error;
+    PostLifestyleWallet(@body body: LifestyleWalletListDTO): VoidResponse;
 
     @put
     PutLifestyleWallet(
@@ -26,20 +26,20 @@ interface LifestyleWallet {
         id: string,
 
         @body body: LifestyleWalletListDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @delete
     DeleteLifestyleWallet(
         @format("uuid")
         @path
         id: string,
-    ): void | Error;
+    ): VoidResponse;
 
     @get
     @route("/Summary")
     GetLifestyleWalletSummary(
         @query year?: string,
-    ): Success<LifestyleWalletSummaryDTO> | Error;
+    ): NormalResponse<LifestyleWalletSummaryDTO>;
 
     @get
     @route("/Request")
@@ -49,7 +49,7 @@ interface LifestyleWallet {
         @query year?: string,
         ...SortBy<GetLifestyleWalletRequestSortBy>,
         ...Paging<void>,
-    ): Success<LifestyleWalletRequestDTO[]> | Error;
+    ): TableResponse<LifestyleWalletRequestDTO[]>;
 
     @put
     @route("/Request")
@@ -59,19 +59,19 @@ interface LifestyleWallet {
         id: string,
 
         @body body: LifestyleWalletRequestDTO,
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Request/MultipleApprove")
     PostLifestyleWalletRequestMultipleApprove(
         @body body: ApproveDTO[],
-    ): void | Error;
+    ): VoidResponse;
 
     @post
     @route("/Request/MultipleDecline")
     PostLifestyleWalletRequestMultipleDecline(
         @body body: ApproveDTO[],
-    ): void | Error;
+    ): VoidResponse;
 
     @get
     @route("/Request/History")
@@ -81,5 +81,5 @@ interface LifestyleWallet {
         @query year?: string,
         ...SortBy<GetLifestyleWalletRequestSortBy>,
         ...Paging<void>,
-    ): Success<LifestyleWalletRequestHistoryDTO[]> | Error;
+    ): TableResponse<LifestyleWalletRequestHistoryDTO[]>;
 }

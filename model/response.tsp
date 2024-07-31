@@ -20,3 +20,10 @@ namespace BaseResponse {
         @body error: ErrorReponse;
     }
 }
+
+alias NormalResponse<successBody extends Reflection.Model> = Success<successBody> | Error;
+
+alias TableResponse<successBody extends Reflection.Model> = (Success<successBody> &
+    HeadersPaging) | Error;
+
+alias VoidResponse = void | Error;

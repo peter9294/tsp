@@ -17,7 +17,7 @@ interface Files {
             @encode("binary")
             file?: bytes;
         },
-    ): Success<FileDTO> | Error;
+    ): NormalResponse<FileDTO>;
 
     @post
     @route("/MultipleUpload")
@@ -28,5 +28,5 @@ interface Files {
             @encode("binary")
             files?: Array<bytes>;
         },
-    ): Success<FileDTO[]> | Error;
+    ): NormalResponse<FileDTO[]>;
 }

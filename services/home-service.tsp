@@ -11,5 +11,5 @@ namespace SofteverHR.Services;
 interface Home {
     @get
     @route("/BirthMonthRemaining")
-    GetBirthMonthRemaining(): Success<BirthMonthRemainingDTO> | Error;
+    GetBirthMonthRemaining(): NormalResponse<BirthMonthRemainingDTO>;
 }
