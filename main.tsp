@@ -8,8 +8,8 @@ import "./services";
 using Http;
 
 @service({
-    title: "Softever HR",
+    title: "SampleProject",
 })
 @server("https://dev-softeverhr.softever.co.th/develop/backend", "")
 @useAuth(Bearer)
-namespace SofteverHR;
+namespace SampleProject;
