@@ -11,6 +11,7 @@ enum NameTitleEN {
     MS: "Ms",
 }
 
+@doc("แผนก")
 enum Department {
     BA: "BA",
     BACKEND: "Backend",

@@ -9,7 +9,7 @@ namespace SofteverHR.Services;
 @route("/api/Users")
 interface Users {
     @get
-    GetUsers(): Success<UserDTO[]> | Error;
+    GetUsers(): NormalResponse<UserDTO[]>;
 
     @get
     @route("/List")
