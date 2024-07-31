@@ -15,3 +15,8 @@ model Paging<_> {
     @query page?: int32;
     @query pageSize?: int32;
 }
+
+alias TableQuery<SortByEnum extends Reflection.Enum> = {
+    ...SortBy<SortByEnum>;
+    ...Paging<void>;
+};
