@@ -31,11 +31,7 @@ interface SofteverFit {
     ): VoidResponse;
 
     @delete
-    DeleteSofteverFit(
-        @format("uuid")
-        @path
-        id: string,
-    ): VoidResponse;
+    DeleteSofteverFit is DeleteId;
 
     @get
     @route("/Summary")

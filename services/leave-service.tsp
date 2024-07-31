@@ -15,8 +15,7 @@ interface Leave {
     @get
     @route("/List")
     GetLeaveList(
-        ...SortBy<GetLeaveListSortBy>,
-        ...Paging<void>,
+        ...TableQuery<GetLeaveListSortBy>,
     ): TableResponse<LeaveListDTO[]>;
 
     @post
@@ -24,7 +23,7 @@ interface Leave {
 
     @delete
     @route("/List")
-    DeleteLeaveList(@format("uuid") @path id: string): VoidResponse;
+    DeleteLeaveList is DeleteId;
 
     @get
     @route("/History")

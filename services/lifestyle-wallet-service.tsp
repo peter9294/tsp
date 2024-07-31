@@ -29,11 +29,7 @@ interface LifestyleWallet {
     ): VoidResponse;
 
     @delete
-    DeleteLifestyleWallet(
-        @format("uuid")
-        @path
-        id: string,
-    ): VoidResponse;
+    DeleteLifestyleWallet is DeleteId;
 
     @get
     @route("/Summary")

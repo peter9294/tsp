@@ -31,11 +31,7 @@ interface SkillUp {
     ): VoidResponse;
 
     @delete
-    DeleteSkillUp(
-        @format("uuid")
-        @path
-        id: string,
-    ): VoidResponse;
+    DeleteSkillUp is DeleteId;
 
     @get
     @route("/Request")

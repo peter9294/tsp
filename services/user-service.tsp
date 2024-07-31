@@ -31,5 +31,5 @@ interface Users {
     CreateUser(@body param: UserDTO): VoidResponse;
 
     @delete
-    DeleteUsersId(@format("uuid") @path id: string): VoidResponse;
+    DeleteUsersId is DeleteId;
 }
