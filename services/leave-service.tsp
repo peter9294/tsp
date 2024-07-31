@@ -19,7 +19,7 @@ interface Leave {
     ): TableResponse<LeaveListDTO[]>;
 
     @post
-    CreateLeave(@body param: LeaveListDTO): VoidResponse;
+    CreateLeave is PostBody<LeaveListDTO>;
 
     @delete
     @route("/List")
@@ -45,11 +45,11 @@ interface Leave {
 
     @post
     @route("/Request/MultipleApprove")
-    PostLeaveRequestMultipleApprove(@body body: ApproveDTO[]): VoidResponse;
+    PostLeaveRequestMultipleApprove is PostBody<ApproveDTO[]>;
 
     @post
     @route("/Request/MultipleDecline")
-    PostLeaveRequestMultipleDecline(@body body: ApproveDTO[]): VoidResponse;
+    PostLeaveRequestMultipleDecline is PostBody<ApproveDTO[]>;
 
     @get
     @route("/Management/List")
@@ -69,10 +69,7 @@ interface Leave {
 
     @put
     @route("/Management")
-    PutLeaveManagement(
-        @format("uuid") @path id: string,
-        @body body: LeaveManagementDTO,
-    ): VoidResponse;
+    PutLeaveManagement is PutId<LeaveManagementDTO>;
 
     @post
     @route("/Management/MultipleDelete")

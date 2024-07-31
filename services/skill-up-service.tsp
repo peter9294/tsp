@@ -18,16 +18,10 @@ interface SkillUp {
     ): TableResponse<SkillUpListDTO[]>;
 
     @post
-    PostSkillUp(@body body: SkillUpListDTO): VoidResponse;
+    PostSkillUp is PostBody<SkillUpListDTO>;
 
     @put
-    PutSkillUp(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: SkillUpListDTO,
-    ): VoidResponse;
+    PutSkillUp is PutId<SkillUpListDTO>;
 
     @delete
     DeleteSkillUp is DeleteId;
@@ -43,21 +37,15 @@ interface SkillUp {
 
     @put
     @route("/Request")
-    PutSkillUpRequest(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: SkillUpRequestDTO,
-    ): VoidResponse;
+    PutSkillUpRequest is PutId<SkillUpRequestDTO>;
 
     @post
     @route("/Request/MultipleApprove")
-    PostSkillUpRequestMultipleApprove(@body body: ApproveDTO[]): VoidResponse;
+    PostSkillUpRequestMultipleApprove is PostBody<ApproveDTO[]>;
 
     @post
     @route("/Request/MultipleDecline")
-    PostSkillUpRequestMultipleDecline(@body body: ApproveDTO[]): VoidResponse;
+    PostSkillUpRequestMultipleDecline is PostBody<ApproveDTO[]>;
 
     @get
     @route("/CourseDropdown")

@@ -18,16 +18,10 @@ interface SofteverFit {
     ): TableResponse<SofteverFitListDTO[]>;
 
     @post
-    PostSofteverFit(@body body: SofteverFitListDTO): VoidResponse;
+    PostSofteverFit is PostBody<SofteverFitListDTO>;
 
     @put
-    PutSofteverFit(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: SofteverFitListDTO,
-    ): VoidResponse;
+    PutSofteverFit is PutId<SofteverFitListDTO>;
 
     @delete
     DeleteSofteverFit is DeleteId;
@@ -61,23 +55,13 @@ interface SofteverFit {
 
     @put
     @route("/Request")
-    PutSofteverFitRequest(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: SofteverFitRequestDTO,
-    ): VoidResponse;
+    PutSofteverFitRequest is PutId<SofteverFitRequestDTO>;
 
     @post
     @route("/Request/MultipleApprove")
-    PostSofteverFitRequestMultipleApprove(
-        @body body: ApproveDTO[],
-    ): VoidResponse;
+    PostSofteverFitRequestMultipleApprove is PostBody<ApproveDTO[]>;
 
     @post
     @route("/Request/MultipleDecline")
-    PostSofteverFitRequestMultipleDecline(
-        @body body: ApproveDTO[],
-    ): VoidResponse;
+    PostSofteverFitRequestMultipleDecline is PostBody<ApproveDTO[]>;
 }

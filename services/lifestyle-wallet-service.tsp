@@ -17,16 +17,10 @@ interface LifestyleWallet {
     ): TableResponse<LifestyleWalletListDTO[]>;
 
     @post
-    PostLifestyleWallet(@body body: LifestyleWalletListDTO): VoidResponse;
+    PostLifestyleWallet is PostBody<LifestyleWalletListDTO>;
 
     @put
-    PutLifestyleWallet(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: LifestyleWalletListDTO,
-    ): VoidResponse;
+    PutLifestyleWallet is PutId<LifestyleWalletListDTO>;
 
     @delete
     DeleteLifestyleWallet is DeleteId;
@@ -48,25 +42,15 @@ interface LifestyleWallet {
 
     @put
     @route("/Request")
-    PutLifestyleWalletRequest(
-        @format("uuid")
-        @path
-        id: string,
-
-        @body body: LifestyleWalletRequestDTO,
-    ): VoidResponse;
+    PutLifestyleWalletRequest is PutId<LifestyleWalletRequestDTO>;
 
     @post
     @route("/Request/MultipleApprove")
-    PostLifestyleWalletRequestMultipleApprove(
-        @body body: ApproveDTO[],
-    ): VoidResponse;
+    PostLifestyleWalletRequestMultipleApprove is PostBody<ApproveDTO[]>;
 
     @post
     @route("/Request/MultipleDecline")
-    PostLifestyleWalletRequestMultipleDecline(
-        @body body: ApproveDTO[],
-    ): VoidResponse;
+    PostLifestyleWalletRequestMultipleDecline is PostBody<ApproveDTO[]>;
 
     @get
     @route("/Request/History")

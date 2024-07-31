@@ -20,14 +20,14 @@ interface Users {
     ): TableResponse<UserListDTO[]>;
 
     @get
-    GetUsersId(@format("uuid") @path id: string): NormalResponse<UserDTO>;
+    GetUsersId is GetId<UserDTO>;
 
     @get
     @route("/Info")
-    GetUserInfo(@format("uuid") @path id: string): NormalResponse<UserInfoDTO>;
+    GetUserInfo is GetId<UserInfoDTO>;
 
     @post
-    CreateUser(@body param: UserDTO): VoidResponse;
+    CreateUser is PostBody<UserDTO>;
 
     @delete
     DeleteUsersId is DeleteId;
