@@ -17,7 +17,7 @@ namespace BaseResponse {
     model ServerError {
         @statusCode statusCode: 500;
         @header contentType: ContentType;
-        @body error: ErrorReponse;
+        @body error: ErrorResponse;
     }
 }
 

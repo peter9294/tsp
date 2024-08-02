@@ -1,5 +1,5 @@
 @error
-model ErrorReponse {
+model ErrorResponse {
     popupErrors?: ErrorItem[];
     fieldErrors?: ErrorItem[];
 }
