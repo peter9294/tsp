@@ -8,3 +8,4 @@ import "./home-service.tsp";
 import "./softever-fit-service.tsp";
 import "./skill-up-service.tsp";
 import "./lifestyle-wallet-service.tsp";
+import "./permission-service.tsp";

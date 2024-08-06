@@ -1,16 +1,12 @@
 enum GetLifestyleWalletListSortBy {
-    ACTIVITY: "Activity",
-    DISTANCE: "Distance",
-    STEP: "Step",
-    CALORIES: "Calories",
-    PERFORMANCE: "Performance",
-    DATE: "Date",
+    NAME: "Name",
+    LIFESTYLE_WALLET_TYPE: "LifestyleWalletType",
     REWARD: "Reward",
+    SPEND_DATE: "SpendDate",
     REQUEST_STATUS: "RequestStatus",
 }
 
 enum GetLifestyleWalletRequestSortBy {
-    NAME: "Name",
     POSITION: "Position",
     ...GetLifestyleWalletListSortBy,
 }

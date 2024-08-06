@@ -1,9 +1,9 @@
-enum Role {
-    SUPER_ADMIN: "SuperAdmin",
-    HEAD_OF_TEAM: "HeadOfTeam",
-    OFFICER: "Officer",
-    EMPLOYEE: "Employee",
-}
+// enum Role {
+//     SUPER_ADMIN: "SuperAdmin",
+//     HEAD_OF_TEAM: "HeadOfTeam",
+//     OFFICER: "Officer",
+//     EMPLOYEE: "Employee",
+// }
 
 enum NameTitleEN {
     MR: "Mr",
@@ -78,7 +78,7 @@ model WorkDetailDTO {
     position?: string | null;
 
     startWorkDate?: utcDateTime | null;
-    role?: Role;
+    role?: RoleDTO;
     isActive?: boolean | null;
 }
 
