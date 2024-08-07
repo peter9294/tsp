@@ -33,10 +33,7 @@ interface Permission {
 
     @post
     @route("/Permission/Role")
-    PostPermissionPermissionRole(
-        @query copyPermissionFrom?: RoleDTO,
-        @body body: RoleDTO,
-    ): VoidResponse;
+    PostPermissionPermissionRole is PostBody<RoleDTO>;
 
     @put
     @route("/Permission/Role")
