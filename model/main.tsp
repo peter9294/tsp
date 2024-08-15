@@ -18,3 +18,4 @@ import "./softever-fit.tsp";
 import "./skill-up.tsp";
 import "./lifestyle-wallet.tsp";
 import "./permission.tsp";
+import "./user-management.tsp";
