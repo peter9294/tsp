@@ -10,3 +10,4 @@ import "./skill-up-service.tsp";
 import "./lifestyle-wallet-service.tsp";
 import "./permission-service.tsp";
 import "./user-management-service.tsp";
+import "./project-management-service.tsp";
