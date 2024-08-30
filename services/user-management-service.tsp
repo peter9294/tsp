@@ -39,7 +39,7 @@ interface UserManagement {
 
     @get
     @route("/ExportExcel")
-    GetUserManagementExportExcel(): Success<FileDTO> | Error;
+    GetUserManagementExportExcel(): NormalResponse<FileDTO>;
 
     @post
     @route("/Import")

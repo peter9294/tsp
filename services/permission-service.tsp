@@ -21,7 +21,7 @@ interface Permission {
 
     @get
     @route("/Permission")
-    GetPermissionPermission(): Success<PermissionDTO> | Error;
+    GetPermissionPermission(): NormalResponse<PermissionDTO>;
 
     @post
     @route("/Permission")
@@ -29,7 +29,7 @@ interface Permission {
 
     @get
     @route("/Permission/Role")
-    GetUserRole(): Success<RoleDTO[]> | Error;
+    GetUserRole(): NormalResponse<RoleDTO[]>;
 
     @post
     @route("/Permission/Role")

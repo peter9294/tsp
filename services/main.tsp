@@ -11,3 +11,5 @@ import "./lifestyle-wallet-service.tsp";
 import "./permission-service.tsp";
 import "./user-management-service.tsp";
 import "./project-management-service.tsp";
+import "./payment-service.tsp";
+import "./report-service.tsp";

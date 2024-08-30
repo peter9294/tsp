@@ -20,3 +20,5 @@ import "./lifestyle-wallet.tsp";
 import "./permission.tsp";
 import "./user-management.tsp";
 import "./project-management.tsp";
+import "./payment.tsp";
+import "./report.tsp";

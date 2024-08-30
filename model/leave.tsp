@@ -144,7 +144,7 @@ model LeaveLeftDTO {
 
 model LeaveHistoryDTO {
     ...Base;
-    user: UserInfoDTO;
+    user?: UserInfoDTO;
     ...Leave;
 }
 

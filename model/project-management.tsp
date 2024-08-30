@@ -28,3 +28,8 @@ model ProjectDTO {
     members?: UserDTO[];
     isActive?: boolean | null;
 }
+
+model ProjectNameDTO {
+    projectId: ProjectDTO.id;
+    projectName: ProjectDTO.projectName;
+}
