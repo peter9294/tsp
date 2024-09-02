@@ -26,6 +26,7 @@ interface Payment {
     @get
     @route("/History")
     GetPaymentHistory(
+        @query userId?: string,
         @query year?: string,
         @query searchTerm?: string,
         @query paymentType?: PaymentType,

@@ -35,7 +35,7 @@ model SkillUp {
     learningStatus?: LearningStatus;
     startDate?: utcDateTime | null;
     endDate?: utcDateTime | null;
-    attachment?: FileDTO;
+    attachment?: FileDTO[] | null;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
 }

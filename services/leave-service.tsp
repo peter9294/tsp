@@ -10,7 +10,7 @@ namespace SofteverHR.Services;
 interface Leave {
     @get
     @route("/Left")
-    GetLeaveLeft(): NormalResponse<LeaveLeftDTO[]>;
+    GetLeaveLeft(@query userId?: string): NormalResponse<LeaveLeftDTO[]>;
 
     @get
     @route("/List")
@@ -28,6 +28,7 @@ interface Leave {
     @get
     @route("/History")
     GetLeaveHistory(
+        @query userId?: string,
         @query year?: string,
         @query searchTerm?: string,
         @query leaveType?: LeaveType,

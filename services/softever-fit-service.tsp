@@ -33,6 +33,7 @@ interface SofteverFit {
     @get
     @route("/WalletChart")
     GetSofteverFitWalletChart(
+        @query userId?: string,
         @query year?: string,
         @query PeriodType?: PeriodType,
     ): NormalResponse<SofteverFitWalletChartDTO>;
@@ -40,6 +41,7 @@ interface SofteverFit {
     @get
     @route("/PointChart")
     GetSofteverFitPointChart(
+        @query userId?: string,
         @query year?: string,
         @query PeriodType?: PeriodType,
     ): NormalResponse<SofteverFitPointChartDTO>;
@@ -47,6 +49,7 @@ interface SofteverFit {
     @get
     @route("/Request")
     GetSofteverFitRequest(
+        @query userId?: string,
         @query searchTerm?: string,
         @query year?: string,
         @query performance?: Performance,

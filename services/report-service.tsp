@@ -8,82 +8,66 @@ namespace SofteverHR.Services;
 @tag("Report")
 @route("/api/Report")
 interface Report {
+    // Overall
     @get
     @route("/TotalEmployee")
-    GetTotalEmployee(): NormalResponse<TotalEmployeeDTO[]>;
+    GetReportTotalEmployee(): NormalResponse<TotalEmployeeDTO[]>;
 
     @get
-    @route("TotaLifestyleWallet")
-    GetTotalLifestyleWallet(): NormalResponse<TotalLifestyleWalletDTO[]>;
+    @route("/TotalLifestyleWallet")
+    GetReportTotalLifestyleWallet(): NormalResponse<TotalLifestyleWalletDTO[]>;
 
     @get
-    @route("TotalPayment")
-    GetTotalPayment(): NormalResponse<TotalPaymentDTO[]>;
+    @route("/Payment")
+    GetReportTotalPayment(): NormalResponse<ReportPaymentDTO>;
 
-    // @get
-    // @route("/List")
-    // GetReportList(
-    //     ...TableQuery<GetReportListSortBy>,
-    // ): TableResponse<ReportListDTO[]>;
+    @get
+    @route("/SkillUpSummaryChart")
+    GetReportSkillUpSummaryChart(): NormalResponse<SkillUpSummaryChartDTO>;
 
-    // @post
-    // CreateReport is PostBody<ReportListDTO>;
+    @get
+    @route("/FitWalletChart")
+    GetReportFitWalletChart(@query year?: string): NormalResponse<FitChartDTO>;
 
-    // @delete
-    // @route("/List")
-    // DeleteReportList is DeleteId;
+    @get
+    @route("/FitPointChart")
+    GetReportFitPointChart(@query year?: string): NormalResponse<FitChartDTO>;
 
-    // @get
-    // @route("/History")
-    // GetReportHistory(
-    //     @query year?: string,
-    //     @query searchTerm?: string,
-    //     @query leaveType?: ReportType,
-    //     ...TableQuery<GetReportHistorySortBy>,
-    // ): TableResponse<ReportHistoryDTO[]>;
+    @get
+    @route("/Overall/ExportExcel")
+    GetReportOverallExportExcel(): NormalResponse<FileDTO>;
 
-    // @get
-    // @route("/Request")
-    // GetReportRequest(
-    //     @query year?: string,
-    //     @query searchTerm?: string,
-    //     @query leaveType?: ReportType,
-    //     ...TableQuery<GetReportRequestSortBy>,
-    // ): TableResponse<ReportRequestDTO[]>;
+    // Employee
+    @get
+    @route("/Employee/List")
+    GetReportEmployeeList(
+        @query department?: Department,
+        @query searchTerm?: string,
+        ...TableQuery<GetReportEmployeeListSortBy>,
+    ): TableResponse<ReportEmployeeListDTO[]>;
 
-    // @post
-    // @route("/Request/MultipleApprove")
-    // PostReportRequestMultipleApprove is PostBody<ApproveDTO[]>;
+    @get
+    @route("/Employee/RecentActivities/List")
+    GetReportEmployeeRecentActivitiesList(
+        @query userId: string,
+        ...Paging<void>,
+    ): TableResponse<ReportRecentActivitiesDTO[]>;
 
-    // @post
-    // @route("/Request/MultipleDecline")
-    // PostReportRequestMultipleDecline is PostBody<ApproveDTO[]>;
+    @get
+    @route("/Employee/SkillupStatusChart")
+    GetReportEmployeeSkillupStatusChart(
+        @query userId: string,
+    ): NormalResponse<ReportSkillupStatusChartDTO>;
 
-    // @get
-    // @route("/Management/List")
-    // GetReportManagementList(
-    //     @query year?: string,
-    //     @query searchTerm?: string,
-    //     @query department?: Department,
-    //     ...TableQuery<GetReportManagementListSortBy>,
-    // ): TableResponse<ReportManagementDTO[]>;
+    @get
+    @route("/Employee/WelfareOverallChart")
+    GetReportEmployeeWelfareOverallChart(
+        @query userId: string,
+    ): NormalResponse<ReportWelfareOverallChartDTO>;
 
-    // @get
-    // @route("/Management")
-    // GetReportManagement(
-    //     @format("uuid") @path id: string,
-    //     @query year?: string,
-    // ): NormalResponse<ReportManagementDTO>;
-
-    // @put
-    // @route("/Management")
-    // PutReportManagement is PutId<ReportManagementDTO>;
-
-    // @post
-    // @route("/Management/MultipleDelete")
-    // DeleteMultipleReportManagement(
-    //     @body body: {
-    //         @format("uuid") id: string;
-    //     }[],
-    // ): VoidResponse;
+    @get
+    @route("/Employee/LifestyleWalletOverallChart")
+    GetReportEmployeeLifestyleWalletOverallChart(
+        @query userId: string,
+    ): NormalResponse<ReportLifestyleWalletOverallChartDTO>;
 }

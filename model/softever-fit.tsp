@@ -49,12 +49,12 @@ model SofteverFitWalletSeriesDTO {
 
 model SofteverFitWalletChartDTO {
     xAxis?: SofteverFitWalletXAxisDTO;
-    series?: SofteverFitWalletSeriesDTO;
+    series?: SofteverFitWalletSeriesDTO[];
 }
 
 model SofteverFitPointChartDTO {
     xAxis?: SofteverFitWalletXAxisDTO;
-    series?: SofteverFitWalletSeriesDTO;
+    series?: SofteverFitWalletSeriesDTO[];
 }
 
 model SofteverFit {
@@ -63,7 +63,7 @@ model SofteverFit {
     step?: int32 | null;
     calories?: int32 | null;
     performance?: Performance;
-    attachment?: FileDTO;
+    attachment?: FileDTO[] | null;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
 }

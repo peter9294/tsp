@@ -12,8 +12,9 @@ interface ProjectManagement {
     @get
     @route("/Project/List")
     GetProjectList(
-        @query year?: string | null,
-        @query searchTerm?: string | null,
+        @query year?: string,
+        @query searchTerm?: string,
+        @query userId?: string,
     ): NormalResponse<ProjectDTO[]>;
 
     @get
@@ -30,17 +31,15 @@ interface ProjectManagement {
 
     @get
     @route("/Project/Company")
-    GetProjectCompany(
-        @query searchTerm?: string | null,
-    ): NormalResponse<CompanyDTO[]>;
+    GetProjectCompany(@query searchTerm?: string): NormalResponse<CompanyDTO[]>;
 
     @get
     @route("/Project/Tag")
-    GetProjectTag(@query searchTerm?: string | null): NormalResponse<TagDTO[]>;
+    GetProjectTag(@query searchTerm?: string): NormalResponse<TagDTO[]>;
 
     @get
     @route("/Project/DropdownList")
     GetProjectDropdownList(
-        @query searchTerm?: string | null,
+        @query searchTerm?: string,
     ): NormalResponse<ProjectNameDTO[]>;
 }

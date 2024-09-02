@@ -140,6 +140,7 @@ model LeaveLeftDTO {
     leaveType?: LeaveType;
     leaveSubType?: LeaveSubType;
     availableDay?: int32 | null;
+    totalDay?: int32 | null;
 }
 
 model LeaveHistoryDTO {

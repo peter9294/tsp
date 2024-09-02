@@ -29,6 +29,7 @@ interface SkillUp {
     @get
     @route("/Request")
     GetSkillUpRequest(
+        @query userId?: string,
         @query searchTerm?: string,
         @query year?: string,
         @query department?: Department,

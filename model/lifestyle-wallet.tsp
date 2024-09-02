@@ -58,7 +58,7 @@ model LifestyleWallet {
     itemName?: string | null;
     lifestyleWalletType?: LifestyleWalletType;
     spendDate?: utcDateTime | null;
-    attachment?: FileDTO;
+    attachment?: FileDTO[] | null;
     reward?: int32 | null;
     hasTaxInvoice?: boolean | null;
     requestStatus?: RequestStatus;

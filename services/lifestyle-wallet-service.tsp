@@ -55,6 +55,7 @@ interface LifestyleWallet {
     @get
     @route("/Request/History")
     GetLifestyleWalletRequestHistory(
+        @query userId?: string,
         @query department?: Department,
         @query searchTerm?: string,
         @query year?: string,
