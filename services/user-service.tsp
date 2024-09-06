@@ -31,4 +31,8 @@ interface Users {
 
     @delete
     DeleteUsersId is DeleteId;
+
+    @get
+    @route("/Position")
+    GetUsersPosition(@query searchTerm?: string): NormalResponse<string[]>;
 }
