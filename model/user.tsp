@@ -60,7 +60,7 @@ model UserDTO {
     firstNameEN?: string | null;
     lastNameEN?: string | null;
     email?: string | null;
-    mobile?: int32 | null;
+    mobile?: string | null;
     sex?: Sex;
     gender?: Gender;
     citizenId?: string | null;
