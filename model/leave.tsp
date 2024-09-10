@@ -139,8 +139,8 @@ model LeaveListDTO {
 model LeaveLeftDTO {
     leaveType?: LeaveType;
     leaveSubType?: LeaveSubType;
-    availableDay?: int32 | null;
-    totalDay?: int32 | null;
+    availableDay?: float | null;
+    totalDay?: float | null;
 }
 
 model LeaveHistoryDTO {
@@ -162,7 +162,7 @@ model LeaveManagementDTO {
     lastName?: UserDTO.lastNameTH;
     email?: UserDTO.email;
     ...WorkDetailDTO;
-    totalLeave?: int32 | null;
+    totalLeave?: float | null;
     leaveLeft?: LeaveLeftDTO[];
     ...BaseTablePermission;
     ...BaseApprovePermission;

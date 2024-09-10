@@ -26,11 +26,11 @@ interface Users {
     @route("/Info")
     GetUserInfo is GetId<UserInfoDTO>;
 
-    @post
-    CreateUser is PostBody<UserDTO>;
+    // @post
+    // CreateUser is PostBody<UserDTO>;
 
-    @delete
-    DeleteUsersId is DeleteId;
+    // @delete
+    // DeleteUsersId is DeleteId;
 
     @get
     @route("/Position")

@@ -74,9 +74,17 @@ interface Leave {
 
     @post
     @route("/Management/MultipleDelete")
-    DeleteMultipleLeaveManagement(
+    DeleteLeaveManagementMultipleDelete(
         @body body: {
             @format("uuid") id: string;
         }[],
+    ): VoidResponse;
+
+    @post
+    @route("/Management/CancelRequest")
+    PostLeaveManagementCancelRequest(
+        @body body: {
+            @format("uuid") id: string;
+        },
     ): VoidResponse;
 }
