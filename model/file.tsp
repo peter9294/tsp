@@ -3,7 +3,7 @@ model FileDTO {
     @format("uuid")
     id?: string | null;
 
-    @doc("Url ของไฟล")
+    @doc("Url ของไฟล์")
     url?: string | null;
 
     @doc("ชื่อไฟล์ (ที่เก็บบน DB)")
