@@ -35,4 +35,8 @@ interface Users {
     @get
     @route("/Position")
     GetUsersPosition(@query searchTerm?: string): NormalResponse<string[]>;
+
+    @get
+    @route("/MyInfo")
+    GetUsersMyInfo(): NormalResponse<UserDTO>;
 }

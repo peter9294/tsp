@@ -42,4 +42,8 @@ interface Permission {
     @delete
     @route("/Permission/Role")
     DeletePermissionPermissionRole is DeleteId;
+
+    @get
+    @route("/Menu")
+    GetPermissionMenu(): NormalResponse<PermissionMenuDTO>;
 }

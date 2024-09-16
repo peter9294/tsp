@@ -22,3 +22,4 @@ import "./user-management.tsp";
 import "./project-management.tsp";
 import "./payment.tsp";
 import "./report.tsp";
+import "./notification.tsp";

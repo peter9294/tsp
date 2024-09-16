@@ -41,3 +41,29 @@ model PermissionDTO {
     projectManagement?: RolePermissionDTO[];
     permissionManagement?: RolePermissionDTO[];
 }
+
+model PermissionMenuDTO {
+    canViewHome?: boolean | null;
+    canViewLeaveHistory?: boolean | null;
+    canViewLeaveManagement?: boolean | null;
+    canViewLeaveRequest?: boolean | null;
+    canViewLeaveTotal?: boolean | null;
+    canViewPaymentHistory?: boolean | null;
+    canViewPaymentList?: boolean | null;
+    canViewPaymentRequest?: boolean | null;
+    canViewReportOverall?: boolean | null;
+    canViewReportEmployee?: boolean | null;
+    canViewRolePermission?: boolean | null;
+    canViewRoleUser?: boolean | null;
+    canViewUserManagementProjectManagement?: boolean | null;
+    canViewUserManagementUsersList?: boolean | null;
+    canViewWelfareLifestyleWallet?: boolean | null;
+    canViewWelfareRequestHistoryLifestyleWallet?: boolean | null;
+    canViewWelfareRequestHistorySkillUp?: boolean | null;
+    canViewWelfareRequestHistorySofteverFit?: boolean | null;
+    canViewWelfareRequestLifestyleWallet?: boolean | null;
+    canViewWelfareRequestSkillUp?: boolean | null;
+    canViewWelfareRequestSofteverFit?: boolean | null;
+    canViewWelfareSkillUp?: boolean | null;
+    canViewWelfareSofteverFit?: boolean | null;
+}
