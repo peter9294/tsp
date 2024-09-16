@@ -10,7 +10,7 @@
     "@typespec/rest": "latest"
   },
   "scripts": {
-    "compile": "tsp compile main.tsp --watch --options=@typespec/openapi3.file-type=json"
+    "compile": "tsp compile main.tsp --watch"
   },
   "private": true
 }
