@@ -1,17 +1,15 @@
+/**
+ * `ANNUAL` - ลาพักร้อน
+ * `SICK` - ลาป่วย
+ * `PERSONAL` - ลากิจ
+ * `Maternity` - ลาคลอด
+ * `Paternity` - ลาช่วยภรรยาคลอดบุตร
+ */
 enum LeaveType {
-    @doc("ลาพักร้อน")
     ANNUAL: "Annual",
-
-    @doc("ลาป่วย")
     SICK: "Sick",
-
-    @doc("ลากิจ")
     PERSONAL: "Personal",
-
-    @doc("ลาคลอด")
     MATERNITY: "Maternity",
-
-    @doc("ลาช่วยภรรยาคลอดบุตร")
     PATERNITY: "Paternity",
 }
 

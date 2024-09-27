@@ -67,4 +67,14 @@ interface SofteverFit {
     @post
     @route("/Request/MultipleDecline")
     PostSofteverFitRequestMultipleDecline is PostBody<ApproveDTO[]>;
+
+    @get
+    @route("/Request/History")
+    GetSofteverFitRequestHistory(
+        @query userId?: string,
+        @query searchTerm?: string,
+        @query year?: string,
+        @query performance?: Performance,
+        ...TableQuery<GetSofteverFitRequestSortBy>,
+    ): TableResponse<SofteverFitRequestDTO[]>;
 }

@@ -1,6 +1,8 @@
 enum Performance {
-    FULL: "Full",
-    HALF: "Half",
+    FULL: "FULL",
+    TRAIN: "TRAIN",
+    ESD3: "ESD3",
+    ESD5: "ESD5",
 }
 
 enum GetSofteverFitListSortBy {
@@ -66,6 +68,7 @@ model SofteverFit {
     attachment?: FileDTO[] | null;
     reward?: int32 | null;
     requestStatus?: RequestStatus;
+    activityDate?: utcDateTime | null;
 }
 
 model SofteverFitListDTO {

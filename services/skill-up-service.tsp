@@ -53,4 +53,14 @@ interface SkillUp {
     GetSkillUpCourseDropdown(
         @query department?: Department,
     ): NormalResponse<SkillUpCourseDTO[]>;
+
+    @get
+    @route("/Request/History")
+    GetSkillUpRequestHistory(
+        @query userId?: string,
+        @query searchTerm?: string,
+        @query year?: string,
+        @query department?: Department,
+        ...TableQuery<GetSkillUpRequestSortBy>,
+    ): TableResponse<SkillUpRequestDTO[]>;
 }
