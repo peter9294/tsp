@@ -1,30 +1,30 @@
 enum GetPaymentListSortBy {
     PAYMENT_TYPE: "PaymentType",
-    PROJECT_NAME: "ProjectName",
-    LOCATION: "Location",
+    ITEM_NAME: "ItemName",
+    PAYMENT_LOCATION: "PaymentLocation",
     SPEND_DATE: "SpendDate",
-    AMOUNT: "Amount",
-    STATUS: "status",
+    TOTAL_AMOUNT: "TotalAmount",
+    PAYMENT_STATUS: "PaymentStatus",
 }
 
 enum GetPaymentHistorySortBy {
     NAME: "Name",
     PAYMENT_TYPE: "PaymentType",
-    PROJECT_NAME: "ProjectName",
-    LOCATION: "Location",
+    ITEM_NAME: "ItemName",
+    PAYMENT_LOCATION: "PaymentLocation",
     SPEND_DATE: "SpendDate",
-    AMOUNT: "Amount",
-    STATUS: "status",
+    TOTAL_AMOUNT: "TotalAmount",
+    PAYMENT_STATUS: "PaymentStatus",
 }
 
 enum GetPaymentRequestSortBy {
     NAME: "Name",
     PAYMENT_TYPE: "PaymentType",
-    PROJECT_NAME: "ProjectName",
-    LOCATION: "Location",
+    ITEM_NAME: "ItemName",
+    PAYMENT_LOCATION: "PaymentLocation",
     SPEND_DATE: "SpendDate",
-    AMOUNT: "Amount",
-    STATUS: "status",
+    TOTAL_AMOUNT: "TotalAmount",
+    PAYMENT_STATUS: "PaymentStatus",
 }
 
 enum PaymentType {
@@ -54,13 +54,13 @@ enum VehicleType {
 model Payment {
     paymentType?: PaymentType;
     paymentStatus?: PaymentStatus;
-    dateType?: DateType;
-    spendDate?: utcDateTime | null;
-    project?: ProjectNameDTO;
-    location?: string | null;
+    dateType?: DateType | null;
+    spendDate?: utcDateTime;
+    itemName?: string | null;
+    paymentLocation?: string;
     province?: string | null;
     attachment?: FileDTO[] | null;
-    amount?: int32 | null;
+    totalAmount?: float32;
     hasTaxInvoice?: boolean | null;
     remark?: string | null;
 }
@@ -73,14 +73,14 @@ model TransportationPayment {
     destination?: string | null;
     destinationProvince?: string | null;
     distance?: int32 | null;
-    vehicleType?: VehicleType;
-    taxiFee?: int32 | null;
-    highwayFee?: int32 | null;
-    parkingFee?: int32 | null;
+    vehicleType?: VehicleType | null;
+    taxiFee?: float32 | null;
+    highwayFee?: float32 | null;
+    parkingFee?: float32 | null;
 }
 
 model SkillUpPayment {
-    course?: SkillUpCourseDTO;
+    course?: SkillUpCourseDTO | null;
     url?: string | null;
 }
 
@@ -97,7 +97,6 @@ model PaymentListDTO {
 model PaymentRequestHistoryDTO {
     ...PaymentListDTO;
     user?: UserRequestDTO;
-    totalAmount?: int32 | null;
     reason?: string | null;
     ...BaseApprovePermission;
 }

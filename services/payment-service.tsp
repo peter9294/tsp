@@ -38,7 +38,7 @@ interface Payment {
     GetPaymentRequest(
         @query year?: string,
         @query searchTerm?: string,
-        @query leaveType?: PaymentType,
+        @query paymentType?: PaymentType,
         ...TableQuery<GetPaymentRequestSortBy>,
     ): TableResponse<PaymentRequestHistoryDTO[]>;
 
