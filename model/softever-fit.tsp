@@ -19,6 +19,14 @@ enum GetSofteverFitListSortBy {
 enum ActivityType {
     RUNNING: "Running",
     WALKING: "Walking",
+    CYCLING: "Cycling",
+    SWIMMING: "Swimming",
+    ROPE_JUMPING: "RopeJumping",
+    BADMINTON: "Badminton",
+    RINGFIT: "Ringfit",
+    META_QUEST_MOVE: "MetaQuestMove",
+    FOOTBALL: "Football",
+    BOXING: "Boxing",
 }
 
 enum GetSofteverFitRequestSortBy {
@@ -67,6 +75,7 @@ model SofteverFit {
     performance?: Performance;
     attachment?: FileDTO[] | null;
     reward?: int32 | null;
+    point?: int32 | null;
     requestStatus?: RequestStatus;
     activityDate?: utcDateTime | null;
 }

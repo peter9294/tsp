@@ -31,8 +31,11 @@ enum MaternityLeaveSubType {
     @doc("ลาตรวจครรถ์")
     PREGNANCY_TEST: "PregnancyTest",
 
-    @doc("ลาคลอด")
+    @doc("ลาฝากครรถ์")
     ANTENATAL_CARE: "AntenatalCare",
+
+    @doc("ลาคลอด")
+    MATERNITY: "Maternity",
 }
 
 enum LeaveSubType {
@@ -164,4 +167,5 @@ model LeaveManagementDTO {
     leaveLeft?: LeaveLeftDTO[];
     ...BaseTablePermission;
     ...BaseApprovePermission;
+    canCancel?: boolean | null;
 }

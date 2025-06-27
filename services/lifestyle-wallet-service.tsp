@@ -14,6 +14,7 @@ interface LifestyleWallet {
     GetLifestyleWalletList(
         ...SortBy<GetLifestyleWalletListSortBy>,
         ...Paging<void>,
+        @query year?: string,
     ): TableResponse<LifestyleWalletListDTO[]>;
 
     @post

@@ -17,7 +17,7 @@ interface Users {
         @query searchTerm?: string,
         @query department?: Department,
         ...TableQuery<GetUserListSortBy>,
-    ): TableResponse<UserListDTO[]>;
+    ): TableResponse<UserDTO[]>;
 
     @get
     GetUsersId is GetId<UserDTO>;

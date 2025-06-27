@@ -13,7 +13,7 @@ model UserRoleListDTO {
     firstNameTH?: UserDTO.firstNameTH;
     lastNameTH?: UserDTO.lastNameTH;
     department?: UserDTO.department;
-    role?: UserDTO.role;
+    role?: UserDTO.role | null;
     canUpdateRole?: boolean | null;
 }
 
@@ -26,7 +26,7 @@ model CanPermissionDTO {
 }
 
 model RolePermissionDTO {
-    role?: RoleDTO;
+    role?: RoleDTO[];
     permission?: CanPermissionDTO;
 }
 

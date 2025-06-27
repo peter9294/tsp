@@ -53,12 +53,14 @@ alias PrivateProperties = "citizenId" | "address" | "birthDate";
 
 model UserDTO {
     ...Base;
+    number?: string | null;
     nameTitleTH?: string | null;
     firstNameTH?: string | null;
     lastNameTH?: string | null;
     nameTitleEN?: NameTitleEN;
     firstNameEN?: string | null;
     lastNameEN?: string | null;
+    nickName?: string | null;
     email?: string | null;
     mobile?: string | null;
     sex?: Sex;
@@ -78,15 +80,8 @@ model WorkDetailDTO {
     position?: string | null;
 
     startWorkDate?: utcDateTime | null;
-    role?: RoleDTO;
+    role?: RoleDTO[];
     isActive?: boolean | null;
-}
-
-@withoutOmittedProperties(
-    PrivateProperties | "employeeId" | "isActive" | "sex" | "gender"
-)
-model UserListDTO {
-    ...UserDTO;
 }
 
 model UserInfoDTO {
