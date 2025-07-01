@@ -26,7 +26,7 @@ model CanPermissionDTO {
 }
 
 model RolePermissionDTO {
-    role?: RoleDTO[];
+    role?: RoleDTO;
     permission?: CanPermissionDTO;
 }
 
